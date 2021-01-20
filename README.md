@@ -14,6 +14,7 @@ angle that the vector makes with the x-axis
 <h1>methods:</h1>
 <h2>static:</h2>
 <h4>random()</h4>
-returns a new random Vector with range x: [0, 1) y: [0, 1)
+returns a new random Vector with range x: \[0, 1) y: \[0, 1)
 <h2>non-static:</h2>
-<h4>add(vector : Vector)</h4>
+<h4>add(vector)</h4>
+receives as an argument
