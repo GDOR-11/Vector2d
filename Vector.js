@@ -29,7 +29,7 @@ class Vector {
 		this.x = this.x + vector.x;
 		this.y = this.y + vector.y;
 	}
-	addAngle(value) {
+	addAngle(angle) {
 		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
@@ -157,17 +157,17 @@ class Vector {
 		this.x = this.x / vector.x;
 		this.y = this.y / vector.y;
 	}
-	divideAngle(angle) {
-		if(Number(angle) != angle) {
+	divideAngle(value) {
+		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle / angle;
+		this.angle = this.angle / value;
 	}
-	divideLength(angle) {
-		if(Number(angle) != angle) {
+	divideLength(value) {
+		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length / angle;
+		this.length = this.length / value;
 	}
 	divideScalar(value) {
 		if(Number(value) != value) {
