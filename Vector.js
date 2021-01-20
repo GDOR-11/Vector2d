@@ -29,17 +29,17 @@ class Vector {
 		this.x = this.x + vector.x;
 		this.y = this.y + vector.y;
 	}
-	addAngle(angle) {
-		if(Number(angle) != angle) {
+	addAngle(value) {
+		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle + angle;
+		this.angle = this.angle + value;
 	}
-	addLength(angle) {
-		if(Number(angle) != angle) {
+	addLength(value) {
+		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length + angle;
+		this.length = this.length + value;
 	}
 	addScalar(value) {
 		if(Number(value) != value) {
