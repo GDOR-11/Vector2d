@@ -17,12 +17,18 @@ angle that the vector makes with the x-axis
 returns a new random Vector with range x: [0, 1) y: [0, 1)
 <h2>non-static:</h2>
 <h4>add(v)</h4>
-receives as an argument a Vector object, adds v.x to this.x and v.y to this.y
+receives as an argument a Vector object<br>adds v.x to this.x and v.y to this.y
 <h4>addAngle(a)</h4>
-receives as an argument a Number, adds a to this.angle
+receives as an argument a Number<br>adds a to this.angle
 <h4>addLength(l)</h4>
-receives as an argument a Number, adds l to this.length
+receives as an argument a Number<br>adds l to this.length
 <h4>addScalar(value)</h4>
-receives as an argumente a Number, adds value to this.x and this.y
+receives as an argumente a Number<br>adds value to this.x and this.y
 <h4>ceil()</h4>
-receives no arguments, round up this.x and this.y
+receives no arguments<br>round up this.x and this.y
+<h4>ceilAngle()</h4>
+receives no arguments<br>round up this.angle
+<h4>ceilLength()</h4>
+receives no arguments<br>round up this.length
+<h4>clamp(min, max)</h4>
+receives as arguments two Vector objetcs<br>if this.x is smaller then min.x, this.x = min.x, the
