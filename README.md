@@ -15,3 +15,4 @@ angle that the vector makes with the x-axis
 <h2>static:</h2>
 <h3>random()</h3>
 returns a new random Vector with range x: [0, 1) y: [0, 1)
+<h2>non-static:</h2>
