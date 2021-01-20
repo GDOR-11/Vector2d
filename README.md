@@ -24,3 +24,5 @@ receives as an argument a Number, adds a to this.angle
 receives as an argument a Number, adds l to this.length
 <h4>addScalar(value)</h4>
 receives as an argumente a Number, adds value to this.x and this.y
+<h4>ceil()</h4>
+receives no arguments, round up this.x and this.y
