@@ -31,4 +31,4 @@ receives no arguments<br>round up this.angle
 <h4>ceilLength()</h4>
 receives no arguments<br>round up this.length
 <h4>clamp(min, max)</h4>
-receives as arguments two Vector objetcs<br>if this.x is less then min.x, it is replaced by min.x, the same for this.y<br>if this.x is greater than max.x, it is replaced by max.x, the same for this.y
+receives as arguments two Vector objetcs<br>if this.x or this.y value is greater than max.x or max.y value, it is replaced by the corresponding value, if this.x or this.y value is less than min.x or min.y value, it is replaced by the corresponding value.
