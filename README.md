@@ -1,5 +1,5 @@
 # Vector2d
-a simple library for 2d vectors
+a simple library for 2d vectors (still in testing phase)
 <br>
 <br>
 <h1>properties:</h1>
