@@ -1,13 +1,14 @@
 var CARTESIAN = 0;
 var POLAR = 1;
+var COORDINATE_MODE = CARTESIAN;
 class Vector {
 	#x = 0;
 	#y = 0;
 	#length = 0;
 	#angle = 0;
-	constructor(x, y, mode) {
+	constructor(x, y) {
 		var error;
-		if(mode == 0) {
+		if(COORDINATE_MODE == 0) {
 			this.x = x;
 			this.y = y;
 			if(Number(this.y) != this.y) {
@@ -18,7 +19,7 @@ class Vector {
 				error = 'parameter 1 is not a number';
 				this.x = 0;
 			}
-		} else if(mode == 1) {
+		} else if(COORDINATE_MODE == 1) {
 			this.length = x;
 			this.angle = y;
 			if(Number(this.angle) != this.angle) {
@@ -34,11 +35,22 @@ class Vector {
 			throw Error(error);
 		}
 	}
+	static isVector(vector) {
+		try {
+			return vector.constructor.name == 'Vector';
+		} catch(error) {
+			return false;
+		}
+	}
 	static random() {
-		return new Vector(1, Math.random() * 2 * Math.PI, POLAR);
+		var coord_mode = COORDINATE_MODE;
+		COORDINATE_MODE = POLAR;
+		var vector =  new Vector(1, Math.random() * 2 * Math.PI);
+		COORDINATE_MODE = coord_mode;
+		return vector;
 	}
 	add(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x + vector.x;
@@ -74,10 +86,10 @@ class Vector {
 		this.length = Math.ceil(this.length);
 	}
 	clamp(min, max) {
-		if(min.constructor.name != 'Vector') {
+		if(!Vector.isVector(min)) {
 			throw Error('parameter 1 is not a Vector');
 		}
-		if(max.constructor.name != 'Vector') {
+		if(!Vector.isVector(max)) {
 			throw Error('parameter 2 is not a Vector');
 		}
 		if(min.x < max.x && min.y < max.y) {
@@ -130,29 +142,33 @@ class Vector {
 		}
 	}
 	clone() {
-		return new Vector(this.x, this.y);
+		var coord_mode = COORDINATE_MODE;
+		COORDINATE_MODE = CARTESIAN;
+		var vector = new Vector(this.x, this.y);
+		COORDINATE_MODE = coord_mode;
+		return vector;
 	}
 	copy(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = vector.x;
 		this.y = vector.y;
 	}
 	distanceTo(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return Math.hypot(this.x - vector.x, this.y - vector.y);
 	}
 	manhattanDistanceTo(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return Math.abs(this.x - vector.x) + Math.abs(this.y - vector.y);
 	}
 	distanceToSquared(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		var offsetx = (this.x - vector.x);
@@ -160,7 +176,7 @@ class Vector {
 		return offsetx * offsetx + offsety * offsety;
 	}
 	divide(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		if(vector.x == 0) {
@@ -195,19 +211,19 @@ class Vector {
 		this.y = this.y / value;
 	}
 	dot(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x * vector.x + this.y * vector.y;
 	}
 	cross(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x * vector.y - this.y * vector.x;
 	}
 	equals(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x == vector.x && this.y == vector.y;
@@ -222,70 +238,70 @@ class Vector {
 	floorLength() {
 		this.length = Math.floor(this.length);
 	}
-	lerp(vector, fraction) {
-		if(vector.constructor.name != 'Vector') {
+	lerp(vector, ammount) {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter 1 is not a Vector');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 2 is not a number');
 		}
-		this.x = this.x + (vector.x - this.x) * fraction;
-		this.y = this.y + (vector.y - this.y) * fraction;
+		this.x = this.x * (1 - ammount) + vector.x * ammount;
+		this.y = this.y * (1 - ammount) + vector.y * ammount;
 	}
-	lerp(vector1, vector2, fraction) {
-		if(vector1.constructor.name != 'Vector') {
+	lerpBeetwen(vector1, vector2, ammount) {
+		if(!Vector.isVector(vector1)) {
 			throw Error('parameter 1 is not a Vector');
 		}
-		if(vector2.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector2)) {
 			throw Error('parameter 2 is not a Vector');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 3 is not a number');
 		}
-		this.x = vector1.x + (vector2.x - vector1.x) * fraction;
-		this.y = vector1.y + (vector2.y - vector1.y) * fraction;
+		this.x = vector1.x * (1 - ammount) + vector2.x * ammount;
+		this.y = vector1.y * (1 - ammount) + vector2.y * ammount;
 	}
-	lerpAngle(angle, fraction) {
+	lerpAngle(angle, ammount) {
 		if(Number(angle) != angle) {
 			throw Error('parameter 1 is not a number');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 2 is not a number');
 		}
-		this.angle = this.angle + (angle - this.angle) * fraction;
+		this.angle = this.angle * (1 - ammount) + angle * ammount;
 	}
-	lerpAngle(angle1, angle2, fraction) {
+	lerpBeetwenAngles(angle1, angle2, ammount) {
 		if(Number(angle1) != angle1) {
 			throw Error('parameter 1 is not a number');
 		}
 		if(Number(angle2) != angle2) {
 			throw Error('parameter 2 is not a number');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 3 is not a number');
 		}
-		this.angle = angle1 + (angle2 - angle1) * fraction;
+		this.angle = angle1 * (1 - ammount) + angle2 * ammount;
 	}
-	lerpLength(length, fraction) {
+	lerpLength(length, ammount) {
 		if(Number(length) != length) {
 			throw Error('parameter 1 is not a number');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 2 is not a number');
 		}
-		this.length = this.length + (length - this.length) * fraction;
+		this.length = this.length * (1 - ammount) + length * ammount;
 	}
-	lerpLength(length1, length2, fraction) {
+	lerpBeetwenLengths(length1, length2, ammount) {
 		if(Number(length1) != length1) {
 			throw Error('parameter 1 is not a number');
 		}
 		if(Number(length2) != length2) {
 			throw Error('parameter 2 is not a number');
 		}
-		if(Number(fraction) != fraction) {
+		if(Number(ammount) != ammount) {
 			throw Error('parameter 3 is not a number');
 		}
-		this.length = length1 + (length2 - length1) * fraction;
+		this.length = length1 * (1 - ammount) + length2 * ammount;
 	}
 	inverse() {
 		this.length = -this.length;
@@ -297,7 +313,7 @@ class Vector {
 		this.length = 1;
 	}
 	multiply(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x * vector.x;
@@ -323,7 +339,7 @@ class Vector {
 		this.y = this.y * value;
 	}
 	rotateAround(center, angle) {
-		if(center.constructor.name != 'Vector') {
+		if(!Vector.isVector(center)) {
 			throw Error('parameter 1 is not a Vector');
 		}
 		if(Number(angle) != angle) {
@@ -427,7 +443,7 @@ class Vector {
 		this.angle = teta;
 	}
 	sub(vector) {
-		if(vector.constructor.name != 'Vector') {
+		if(!Vector.isVector(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x - vector.x;
