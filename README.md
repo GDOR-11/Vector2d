@@ -42,8 +42,10 @@
 			<h6>public. sets this.#angle to a and adjusts this.#x and this.#y to fit the new angle</h6>
 <h2>Vector2d methods:</h2>
 	<h3>static:</h3>
+		<h4>isVector2d(v)</h4>
+			<h6>receives one argument<br>returns true if v is a Vector2d, else returns false</h6>
 		<h4>random()</h4>
-			<h6>returns a new Vector2d with length 1 and random angle</h6>
+			<h6>receives no arguments<br>returns a new Vector2d with length 1 and random angle</h6>
 	<h3>non-static:</h3>
 		<h4>add(v)</h4>
 			<h6>receives as an argument a Vector2d object<br>adds v.x to this.x and v.y to this.y</h6>
