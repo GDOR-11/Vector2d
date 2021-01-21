@@ -2,17 +2,17 @@
 <h6>a simple library for 2d vectors (still in testing phase and no minimized version, and documentation is not complete)</h6>
 <br>
 <br>
-<h2><strong>global variables:</strong></h2>
+<strong><h2>global variables:</h2></strong>
 	<h3>COORDINATE.MODE</h3>
 		<h4>getter/setter in COORDINATE class, you can set it ONLY to CARTESIAN or POLAR, it represents if Vector constructors get cartesian or polar coordinates as arguments</h4>
 	<h3>CARTESIAN</h3>
 		<h4>an constant that represents cartesian geometry to COORDINATE.MODE</h4>
 	<h3>POLAR</h3>
 		<h4>an constant that represents polar geometry to COORDINATE.MODE</h4>
-<h2><strong>Vector constructor:</strong></h2>
+<strong><h2>Vector constructor:</h2></strong>
 	<h3>constructor(x, y)</h3>
 		<h4>receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created (in cartesian or polar coordinate system, see COORDINATE.MODE for more information)</h4>
-<h2><strong>Vector properties:</strong></h2>
+<strong><h2>Vector properties:</h2></strong>
 	<h3>#x</h3>
 		<h4>private. the x coordinate</h4>
 	<h3>#y</h3>
@@ -21,7 +21,7 @@
 		<h4>private. the length of the vector</h4>
 	<h3>#angle</h3>
 		<h4>private. the angle that the vector makes with the x-axis</h4>
-<h2><strong>Vector getters & setters:</strong></h2>
+<strong><h2>Vector getters & setters:</h2></strong>
 	<h3>getters:</h3>
 		<h4>get x()</h4>
 			<h5>public. returns this.#x</h5>
@@ -40,7 +40,7 @@
 			<h5>public. sets this.#length to l and adjusts this.#x and this.#y to fit the new length</h5>
 		<h4>set angle(a)</h4>
 			<h5>public. sets this.#angle to a and adjusts this.#x and this.#y to fit the new angle</h5>
-<h2><strong>Vector methods:</strong></h2>
+<strong><h2>Vector methods:</h2></strong>
 	<h3>static:</h3>
 		<h4>random()</h4>
 			<h5>returns a new random Vector with length 1 and random angle</h5>
