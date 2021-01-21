@@ -11,8 +11,8 @@ private. the y coordinate
 private. the length of the vector
 <h4>#angle</h4>
 private. the angle that the vector makes with the x-axis
-<h1>getters & setters</h1>
-<h2>getters</h2>
+<h1>getters & setters:</h1>
+<h2>getters:</h2>
 <h4>get x()</h4>
 public. returns this.#x
 <h4>get y()</h4>
@@ -21,7 +21,7 @@ public. returns this.#y
 public. returns this.#length
 <h4>get angle()</h4>
 public. returns this.#angle
-<h2>setters</h2>
+<h2>setters:</h2>
 <h4>set x(x)</h4>
 public. sets this.#x to x and adjusts this.#length and this.#angle to fit the new x
 <h4>set y(y)</h4>
