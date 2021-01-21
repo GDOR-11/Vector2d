@@ -1,6 +1,17 @@
-var CARTESIAN = 0;
-var POLAR = 1;
-var COORDINATE_MODE = CARTESIAN;
+const CARTESIAN = 'CARTESIAN';
+const POLAR = 'POLAR';
+class COORDINATE {
+	static #mode = CARTESIAN
+	static get MODE() {
+		return COORDINATE.#mode;
+	}
+	static set MODE(mode) {
+		if(mode != CARTESIAN && mode != POLAR) {
+			throw Error('COORDINATE.MODE must be CARTESIAN or POLAR');
+		}
+		COORDINATE.#mode = mode;
+	}
+}
 class Vector {
 	#x = 0;
 	#y = 0;
@@ -8,7 +19,7 @@ class Vector {
 	#angle = 0;
 	constructor(x, y) {
 		var error;
-		if(COORDINATE_MODE == 0) {
+		if(COORDINATE.MODE == CARTESIAN) {
 			this.x = x;
 			this.y = y;
 			if(Number(this.y) != this.y) {
@@ -19,7 +30,7 @@ class Vector {
 				error = 'parameter 1 is not a number';
 				this.x = 0;
 			}
-		} else if(COORDINATE_MODE == 1) {
+		} else {
 			this.length = x;
 			this.angle = y;
 			if(Number(this.angle) != this.angle) {
@@ -43,10 +54,10 @@ class Vector {
 		}
 	}
 	static random() {
-		var coord_mode = COORDINATE_MODE;
-		COORDINATE_MODE = POLAR;
+		var coord_mode = COORDINATE.MODE;
+		COORDINATE.MODE = POLAR;
 		var vector =  new Vector(1, Math.random() * 2 * Math.PI);
-		COORDINATE_MODE = coord_mode;
+		COORDINATE.MODE = coord_mode;
 		return vector;
 	}
 	add(vector) {
@@ -142,10 +153,10 @@ class Vector {
 		}
 	}
 	clone() {
-		var coord_mode = COORDINATE_MODE;
-		COORDINATE_MODE = CARTESIAN;
+		var coord_mode = COORDINATE.MODE;
+		COORDINATE.MODE = CARTESIAN;
 		var vector = new Vector(this.x, this.y);
-		COORDINATE_MODE = coord_mode;
+		COORDINATE.MODE = coord_mode;
 		return vector;
 	}
 	copy(vector) {
