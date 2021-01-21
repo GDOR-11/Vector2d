@@ -18,12 +18,12 @@ returns a new random Vector with range x: [0, 1) y: [0, 1)
 <h2>non-static:</h2>
 <h4>add(v)</h4>
 receives as an argument a Vector object<br>adds v.x to this.x and v.y to this.y
-<h4>addAngle(a)</h4>
-receives as an argument a Number<br>adds a to this.angle
-<h4>addLength(l)</h4>
-receives as an argument a Number<br>adds l to this.length
+<h4>addAngle(val)</h4>
+receives as an argument a number<br>adds val to this.angle
+<h4>addLength(val)</h4>
+receives as an argument a number<br>adds val to this.length
 <h4>addScalar(value)</h4>
-receives as an argumente a Number<br>adds value to this.x and this.y
+receives as an argumente a number<br>adds value to this.x and this.y
 <h4>ceil()</h4>
 receives no arguments<br>round up this.x and this.y
 <h4>ceilAngle()</h4>
@@ -46,3 +46,25 @@ receives as argument a Vector object<br>copies all v properties to this Vector
 receives as argument a Vector object<br>returns the distance from this Vector to v
 <h4>manhattanDistanceTo(v)</h4>
 receives as argument a Vector object<br>returns the manhattan/taxicab distance from this Vector to v (see https://en.wikipedia.org/wiki/Taxicab_geometry for more details)
+<h4>distanceToSquared(v)</h4>
+receives as argument a Vector object<br>returns th distance from this Vector to v squared, good to campare distances because it is slightly faster than distanceTo()
+<h4>divide(v)</h4>
+receives as argument a Vector object<br>divides this.x by v.x and this.y by v.y
+<h4>divideAngle(val)</h4>
+receives as argument a number<br>divides this.angle by val
+<h4>divideLength(val)</h4>
+receives as argument a number<br>divides this.length by val
+<h4>divideScalar(val)</h4>
+receives as argument a number<br>divides this.x and this.y by val
+<h4>dot(v)</h4>
+receives as argument a Vector object<br>return the dot product of this Vector and v
+<h4>cross(v)</h4>
+receives as argument a Vector object<br>return the z value of the cross product of this Vector and v
+<h4>equals(v)</h4>
+receives as argument a Vector object<br>returns true if the two vectors represent the same location, else returns false
+<h4>floor()</h4>
+receives no arguments<br>rounds down this.x and this.y
+<h4>floorAngle()</h4>
+receives no arguments<br>rounds down this.angle
+<h4>floorLength()</h4>
+receives no arguments<br>rounds down this.length
