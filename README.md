@@ -1,5 +1,5 @@
-# Vector2d
-a simple library for 2d vectors (still in testing phase and no minimized version, and documentation is not complete)
+<h1>Vector2d</h1>
+<h6>a simple library for 2d vectors (still in testing phase and no minimized version, and documentation is not complete)</h6>
 <br>
 <br>
 <h1>global variables:</h1>
