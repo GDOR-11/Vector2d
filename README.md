@@ -4,7 +4,7 @@ a simple library for 2d vectors (still in testing phase and no minimized version
 <br>
 <h1>constructor:</h1>
 <h3>constructor(x, y, mode)</h3>
-receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created, mode is a number, but you can pass in the keywords CARTESIAN or POLAR (0 and 1, respectively)
+receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created (in cartesian or polar coordinate system), mode is a number, but you can pass in the keywords CARTESIAN or POLAR (0 and 1, respectively)
 <h1>properties:</h1>
 <h4>#x</h4>
 private. the x coordinate
