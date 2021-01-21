@@ -49,9 +49,9 @@ class Vector2d {
 			throw Error(error);
 		}
 	}
-	static isVector(vector) {
+	static isVector2d(vector) {
 		try {
-			return vector.constructor.name === 'Vector';
+			return vector.constructor.name === 'Vector2d';
 		} catch(error) {
 			return false;
 		}
@@ -64,7 +64,7 @@ class Vector2d {
 		return vector;
 	}
 	add(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x + vector.x;
@@ -100,10 +100,10 @@ class Vector2d {
 		this.length = Math.ceil(this.length);
 	}
 	clamp(min, max) {
-		if(!Vector.isVector(min)) {
+		if(!Vector2d.isVector2d(min)) {
 			throw Error('parameter 1 is not a Vector');
 		}
-		if(!Vector.isVector(max)) {
+		if(!Vector2d.isVector2d(max)) {
 			throw Error('parameter 2 is not a Vector');
 		}
 		if(min.x < max.x && min.y < max.y) {
@@ -163,26 +163,26 @@ class Vector2d {
 		return vector;
 	}
 	copy(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = vector.x;
 		this.y = vector.y;
 	}
 	distanceTo(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return Math.hypot(this.x - vector.x, this.y - vector.y);
 	}
 	manhattanDistanceTo(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return Math.abs(this.x - vector.x) + Math.abs(this.y - vector.y);
 	}
 	distanceToSquared(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		var offsetx = (this.x - vector.x);
@@ -190,7 +190,7 @@ class Vector2d {
 		return offsetx * offsetx + offsety * offsety;
 	}
 	divide(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		if(vector.x === 0) {
@@ -225,19 +225,19 @@ class Vector2d {
 		this.y = this.y / value;
 	}
 	dot(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x * vector.x + this.y * vector.y;
 	}
 	cross(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x * vector.y - this.y * vector.x;
 	}
 	equals(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		return this.x === vector.x && this.y === vector.y;
@@ -253,7 +253,7 @@ class Vector2d {
 		this.length = Math.floor(this.length);
 	}
 	lerp(vector, ammount) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter 1 is not a Vector');
 		}
 		if(Number(ammount) !== ammount) {
@@ -263,10 +263,10 @@ class Vector2d {
 		this.y = this.y * (1 - ammount) + vector.y * ammount;
 	}
 	lerpBeetwen(vector1, vector2, ammount) {
-		if(!Vector.isVector(vector1)) {
+		if(!Vector2d.isVector2d(vector1)) {
 			throw Error('parameter 1 is not a Vector');
 		}
-		if(!Vector.isVector(vector2)) {
+		if(!Vector2d.isVector2d(vector2)) {
 			throw Error('parameter 2 is not a Vector');
 		}
 		if(Number(ammount) !== ammount) {
@@ -284,7 +284,7 @@ class Vector2d {
 		}
 		this.angle = this.angle * (1 - ammount) + angle * ammount;
 	}
-	lerpBeetwenAngles(angle1, angle2, ammount) {
+	lerpAngleBeetwen(angle1, angle2, ammount) {
 		if(Number(angle1) !== angle1) {
 			throw Error('parameter 1 is not a number');
 		}
@@ -305,7 +305,7 @@ class Vector2d {
 		}
 		this.length = this.length * (1 - ammount) + length * ammount;
 	}
-	lerpBeetwenLengths(length1, length2, ammount) {
+	lerpLengthBeetwen(length1, length2, ammount) {
 		if(Number(length1) !== length1) {
 			throw Error('parameter 1 is not a number');
 		}
@@ -327,7 +327,7 @@ class Vector2d {
 		this.length = 1;
 	}
 	multiply(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x * vector.x;
@@ -353,7 +353,7 @@ class Vector2d {
 		this.y = this.y * value;
 	}
 	rotateAround(center, angle) {
-		if(!Vector.isVector(center)) {
+		if(!Vector2d.isVector2d(center)) {
 			throw Error('parameter 1 is not a Vector');
 		}
 		if(Number(angle) !== angle) {
@@ -457,7 +457,7 @@ class Vector2d {
 		this.angle = teta;
 	}
 	sub(vector) {
-		if(!Vector.isVector(vector)) {
+		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
 		this.x = this.x - vector.x;
