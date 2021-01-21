@@ -15,7 +15,7 @@ class COORDINATE {
 		COORDINATE.#mode = mode;
 	}
 }
-class Vector {
+class Vector2d {
 	#x = 0;
 	#y = 0;
 	#length = 0;
@@ -59,7 +59,7 @@ class Vector {
 	static random() {
 		var coord_mode = COORDINATE.MODE;
 		COORDINATE.MODE = POLAR;
-		var vector =  new Vector(1, Math.random() * 2 * Math.PI);
+		var vector =  new Vector2d(1, Math.random() * 2 * Math.PI);
 		COORDINATE.MODE = coord_mode;
 		return vector;
 	}
@@ -158,7 +158,7 @@ class Vector {
 	clone() {
 		var coord_mode = COORDINATE.MODE;
 		COORDINATE.MODE = CARTESIAN;
-		var vector = new Vector(this.x, this.y);
+		var vector = new Vector2d(this.x, this.y);
 		COORDINATE.MODE = coord_mode;
 		return vector;
 	}
