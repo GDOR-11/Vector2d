@@ -4,23 +4,23 @@
 <br>
 <h2>global variables:</h2>
 	<h3>COORDINATE.MODE</h3>
-		<h4>getter/setter in COORDINATE class, you can set it ONLY to CARTESIAN or POLAR, it represents if Vector constructors get cartesian or polar coordinates as arguments</h4>
+		<h5>getter/setter in COORDINATE class, you can set it ONLY to CARTESIAN or POLAR, it represents if Vector constructors get cartesian or polar coordinates as arguments</h5>
 	<h3>CARTESIAN</h3>
-		<h4>an constant that represents cartesian geometry to COORDINATE.MODE</h4>
+		<h5>an constant that represents cartesian geometry to COORDINATE.MODE</h5>
 	<h3>POLAR</h3>
-		<h4>an constant that represents polar geometry to COORDINATE.MODE</h4>
+		<h5>an constant that represents polar geometry to COORDINATE.MODE</h5>
 <h2>Vector constructor:</h2>
 	<h3>constructor(x, y)</h3>
-		<h4>receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created (in cartesian or polar coordinate system, see COORDINATE.MODE for more information)</h4>
+		<h5>receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created (in cartesian or polar coordinate system, see COORDINATE.MODE for more information)</h4>
 <h2>Vector properties:</h2>
 	<h3>#x</h3>
-		<h4>private. the x coordinate</h4>
+		<h5>private. the x coordinate</h5>
 	<h3>#y</h3>
-		<h4>private. the y coordinate</h4>
+		<h5>private. the y coordinate</h5>
 	<h3>#length</h3>
-		<h4>private. the length of the vector</h4>
+		<h5>private. the length of the vector</h5>
 	<h3>#angle</h3>
-		<h4>private. the angle that the vector makes with the x-axis</h4>
+		<h5>private. the angle that the vector makes with the x-axis</h5>
 <h2>Vector getters & setters:</h2>
 	<h3>getters:</h3>
 		<h4>get x()</h4>
