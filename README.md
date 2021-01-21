@@ -21,6 +21,15 @@ public. returns this.#y
 public. returns this.#length
 <h4>get angle()</h4>
 public. returns this.#angle
+<h2>setters</h2>
+<h4>set x(x)</h4>
+public. sets this.#x to x and adjusts this.#length and this.#angle to fit the new x
+<h4>set y(y)</h4>
+public. sets this.#y to y and adjusts this.#length and this.#angle to fit the new y
+<h4>set length(l)</h4>
+public. sets this.#length to l and adjusts this.#x and this.#y to fit the new length
+<h4>set angle(a)</h4>
+public. sets this.#angle to a and adjusts this.#x and this.#y to fit the new angle
 <h1>methods:</h1>
 <h2>static:</h2>
 <h4>random()</h4>
