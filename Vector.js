@@ -44,7 +44,7 @@ class Vector {
 		this.x = this.x + vector.x;
 		this.y = this.y + vector.y;
 	}
-	addAngle(angle) {
+	addAngle(value) {
 		if(Number(value) != value) {
 			throw Error('parameter is not a number');
 		}
