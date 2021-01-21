@@ -1,26 +1,41 @@
+var CARTESIAN = 0;
+var POLAR = 1;
 class Vector {
 	#x = 0;
 	#y = 0;
 	#length = 0;
 	#angle = 0;
-	constructor(x, y) {
+	constructor(x, y, mode) {
 		var error;
-		this.x = x;
-		this.y = y;
-		if(Number(this.y) != this.y) {
-			error = 'parameter 2 is not a number';
-			this.x = 0;
-		}
-		if(Number(this.x) != this.x) {
-			error = 'parameter 1 is not a number';
-			this.y = 0;
+		if(mode == 0) {
+			this.x = x;
+			this.y = y;
+			if(Number(this.y) != this.y) {
+				error = 'parameter 2 is not a number';
+				this.y = 0;
+			}
+			if(Number(this.x) != this.x) {
+				error = 'parameter 1 is not a number';
+				this.x = 0;
+			}
+		} else if(mode == 1) {
+			this.length = x;
+			this.angle = y;
+			if(Number(this.angle) != this.angle) {
+				error = 'parameter 2 is not a number';
+				this.angle = 0;
+			}
+			if(Number(this.length) != this.length) {
+				error = 'parameter 1 is not a number';
+				this.length = 0;
+			}
 		}
 		if(error) {
 			throw Error(error);
 		}
 	}
 	static random() {
-		return new Vector(Math.random(), Math.random());
+		return new Vector(1, Math.random() * 2 * Math.PI, POLAR);
 	}
 	add(vector) {
 		if(vector.constructor.name != 'Vector') {
