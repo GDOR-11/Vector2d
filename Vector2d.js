@@ -67,27 +67,27 @@ class Vector2d {
 		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
-		this.x = this.x + vector.x;
-		this.y = this.y + vector.y;
+		this.x += vector.x;
+		this.y += vector.y;
 	}
 	addAngle(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle + value;
+		this.angle += value;
 	}
 	addLength(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length + value;
+		this.length += value;
 	}
 	addScalar(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.x = this.x + value;
-		this.y = this.y + value;
+		this.x += value;
+		this.y += value;
 	}
 	ceil() {
 		this.x = Math.ceil(this.x);
@@ -199,20 +199,20 @@ class Vector2d {
 		if(vector.y === 0) {
 			throw Error('y coordinate of parameter is 0');
 		}
-		this.x = this.x / vector.x;
-		this.y = this.y / vector.y;
+		this.x /= vector.x;
+		this.y /= vector.y;
 	}
 	divideAngle(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle / value;
+		this.angle /= value;
 	}
 	divideLength(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length / value;
+		this.length /= value;
 	}
 	divideScalar(value) {
 		if(Number(value) !== value) {
@@ -221,8 +221,8 @@ class Vector2d {
 		if(value === 0) {
 			throw Error('parameter is 0');
 		}
-		this.x = this.x / value;
-		this.y = this.y / value;
+		this.x /= value;
+		this.y /= value;
 	}
 	dot(vector) {
 		if(!Vector2d.isVector2d(vector)) {
@@ -318,10 +318,11 @@ class Vector2d {
 		this.length = length1 * (1 - ammount) + length2 * ammount;
 	}
 	inverse() {
-		this.length = -this.length;
+		this.x *= -1;
+		this.y *= -1;
 	}
 	inverseAngle() {
-		this.angle = -this.angle;
+		this.angle *= -1;
 	}
 	normalize() {
 		this.length = 1;
@@ -330,27 +331,27 @@ class Vector2d {
 		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
-		this.x = this.x * vector.x;
-		this.y = this.y * vector.y;
+		this.x *= vector.x;
+		this.y *= vector.y;
 	}
 	multiplyLength(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length * value;
+		this.length *= value;
 	}
 	multiplyAngle(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle * value;
+		this.angle *= value;
 	}
 	multiplyScalar(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.x = this.x * value;
-		this.y = this.y * value;
+		this.x *= value;
+		this.y *= value;
 	}
 	rotateAround(center, angle) {
 		if(!Vector2d.isVector2d(center)) {
@@ -359,11 +360,11 @@ class Vector2d {
 		if(Number(angle) !== angle) {
 			throw Error('parameter 2 is not a number');
 		}
-		this.x = this.x - center.x;
-		this.y = this.y - center.y;
-		this.angle = this.angle + angle;
-		this.x = this.x + center.x;
-		this.y = this.y + center.y;
+		this.x -= center.x;
+		this.y -= center.y;
+		this.angle += angle;
+		this.x += center.x;
+		this.y += center.y;
 	}
 	round() {
 		this.x = Math.round(this.x);
@@ -452,35 +453,35 @@ class Vector2d {
 		this.x = value;
 		this.y = value;
 	}
-	setPolar(r, teta) {
+	setPolar(r, theta) {
 		this.length = r;
-		this.angle = teta;
+		this.angle = theta;
 	}
 	sub(vector) {
 		if(!Vector2d.isVector2d(vector)) {
 			throw Error('parameter is not a Vector');
 		}
-		this.x = this.x - vector.x;
-		this.y = this.y - vector.y;
+		this.x -= vector.x;
+		this.y -= vector.y;
 	}
 	subAngle(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.angle = this.angle - value;
+		this.angle -= value;
 	}
 	subLength(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.length = this.length - value;
+		this.length -= value;
 	}
 	subScalar(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
-		this.x = this.x - value;
-		this.y = this.y - value;
+		this.x -= value;
+		this.y -= value;
 	}
 	get angle() {
 		return this.#angle;
