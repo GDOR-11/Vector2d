@@ -90,3 +90,15 @@ receives no arguments<br>rounds down this.x and this.y
 receives no arguments<br>rounds down this.angle
 <h4>floorLength()</h4>
 receives no arguments<br>rounds down this.length
+<h4>lerp(v, amt)</h4>
+receives as arguments one Vector object and one number<br>sets this Vector coordinates to the linear interpolation of this Vector and v, where amt is the percent distance along the line connecting this Vector and v, amt = 0 will be this Vector, amt = 1 will be v (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
+<h4>lerpBeetwen(v1, v2, amt)</h4>
+receives as arguments two Vector object and one number<br>sets this Vector coordinates to the linear interpolation of v1 and v2, where amt is the percent distance along the line connecting v1 and v2, amt = 0 will be v1, amt = 1 will be v2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
+<h4>lerpAngle(a, amt)</h4>
+receives as arguments two numbers<br>sets this.angle to the linear interpolation beetwen this.angle and a, where amt is the percent distance beetwen this.angle and a, amt = 0 will be this.angle, amt = 1 will be a (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
+<h4>lerpAngleBeetwen(a1, a2, amt)</h4>
+receives as arguments three numbers<br>sets this.angle to the linear interpolation of a1 and a2, where amt is the percent distance beetwen v1 and v2, amt = 0 will be a1, amt = 1 will be a2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
+<h4>lerpLength(l, amt)</h4>
+receives as arguments two numbers<br>sets this.length to the linear interpolation beetwen this.length and l, where amt is the percent distance beetwen this.length and l, amt = 0 will be this.length, amt = 1 will be l (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
+<h4>lerpLengthBeetwen(l1, l2, amt)</h4>
+receives as arguments three numbers<br>sets this.length to the linear interpolation of l1 and l2, where amt is the percent distance beetwen l1 and l2, amt = 0 will be l1, amt = 1 will be l2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)
