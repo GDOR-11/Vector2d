@@ -109,3 +109,26 @@
 			<h6>receives as arguments two numbers<br>sets this.length to the linear interpolation beetwen this.length and l, where amt is the percent distance beetwen this.length and l, amt = 0 will be this.length, amt = 1 will be l (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
 		<h4>lerpLengthBeetwen(l1, l2, amt)</h4>
 			<h6>receives as arguments three numbers<br>sets this.length to the linear interpolation of l1 and l2, where amt is the percent distance beetwen l1 and l2, amt = 0 will be l1, amt = 1 will be l2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
+		<h4>inverse()</h4>
+			<h6>receives no arguments<br>multiply this.x and this.y by -1</h6>
+		<h4>inverseAngle()</h4>
+			<h6>receives no arguments<br>multiply this.angle by -1</h6>
+		<h4>normalize()</h4>
+			<h6>receives no arguments<br>sets this.length to 1, in others words, transforms this vector in a unit vector</h6>
+		<h4>multiply(v)</h4>
+			<h6>receives as argument one Vector2d object<br>multiplies this.x by v.x and this.y by v.y</h6>
+		<h4>multiplyAngle(val)</h4>
+			<h6>receives as argument one number<br>multiplies this.angle by val</h6>
+		<h4>multiplyLength(val)</h4>
+			<h6>receives as argument one number<br>multiplies this.length by val</h6>
+		<h4>multiplyScalar(val)</h4>
+			<h6>receives as argument one number<br>multiplies this.x and this.y by val</h6>
+		<h4>rotateAround(center, angle)</h4>
+			<h6>receives as argument one Vector2d object and one number<br>rotates this vector around center by angle degrees</h6>
+		<h4>round()</h4>
+			<h6>receives no arguments<br>rounds this.x and this.y to the nearest integer</h6>
+		<h4>roundToZero()</h4>
+			<h6>receives no arguments<br>rounds this.x and this.y towards 0 (up if negative, down if positive) to an integer value</h6>
+		<h4>roundAwayFromZero()</h4>
+			<h6>receives no arguments<br>rounds this.x and this.y away from 0 (up if positive, down if negative) to an integer value</h6>
+	
