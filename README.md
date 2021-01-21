@@ -4,15 +4,15 @@
 <br>
 <h2>global variables:</h2>
 	<h3>COORDINATE.MODE</h3>
-		<h5>getter/setter in COORDINATE class, you can set it ONLY to CARTESIAN or POLAR, it represents if Vector constructors get cartesian or polar coordinates as arguments</h5>
+		<h5>getter/setter in COORDINATE class, you can set it ONLY to CARTESIAN or POLAR, it represents if Vector2d constructor get cartesian or polar coordinates as arguments</h5>
 	<h3>CARTESIAN</h3>
 		<h5>an constant that represents cartesian geometry to COORDINATE.MODE</h5>
 	<h3>POLAR</h3>
 		<h5>an constant that represents polar geometry to COORDINATE.MODE</h5>
-<h2>Vector constructor:</h2>
+<h2>Vector2d constructor:</h2>
 	<h3>constructor(x, y)</h3>
-		<h5>receives as arguments three numbers<br>x and y are the coordinates of the Vector to be created (in cartesian or polar coordinate system, see COORDINATE.MODE for more information)</h4>
-<h2>Vector properties:</h2>
+		<h5>receives as arguments three numbers<br>x and y are the coordinates of the vector to be created (in cartesian or polar coordinate system, see COORDINATE.MODE for more information)</h4>
+<h2>Vector2d properties:</h2>
 	<h3>#x</h3>
 		<h5>private. the x coordinate</h5>
 	<h3>#y</h3>
@@ -21,7 +21,7 @@
 		<h5>private. the length of the vector</h5>
 	<h3>#angle</h3>
 		<h5>private. the angle that the vector makes with the x-axis</h5>
-<h2>Vector getters & setters:</h2>
+<h2>Vector2d getters & setters:</h2>
 	<h3>getters:</h3>
 		<h4>get x()</h4>
 			<h6>public. returns this.#x</h6>
@@ -40,13 +40,13 @@
 			<h6>public. sets this.#length to l and adjusts this.#x and this.#y to fit the new length</h6>
 		<h4>set angle(a)</h4>
 			<h6>public. sets this.#angle to a and adjusts this.#x and this.#y to fit the new angle</h6>
-<h2>Vector methods:</h2>
+<h2>Vector2d methods:</h2>
 	<h3>static:</h3>
 		<h4>random()</h4>
-			<h6>returns a new random Vector with length 1 and random angle</h6>
+			<h6>returns a new Vector2d with length 1 and random angle</h6>
 	<h3>non-static:</h3>
 		<h4>add(v)</h4>
-			<h6>receives as an argument a Vector object<br>adds v.x to this.x and v.y to this.y</h6>
+			<h6>receives as an argument a Vector2d object<br>adds v.x to this.x and v.y to this.y</h6>
 		<h4>addAngle(val)</h4>
 			<h6>receives as an argument a number<br>adds val to this.angle</h6>
 		<h4>addLength(val)</h4>
@@ -60,7 +60,7 @@
 		<h4>ceilLength()</h4>
 			<h6>receives no arguments<br>round up this.length</h6>
 		<h4>clamp(min, max)</h4>
-			<h6>receives as arguments two Vector objetcs<br>if this.x is greater than max.x, it is replaced by max.x, if it is less than min.x, it is replaced by min.x. the same for this.y, max.y and min.y</h6>
+			<h6>receives as arguments two Vector2d objetcs<br>if this.x is greater than max.x, it is replaced by max.x, if it is less than min.x, it is replaced by min.x. the same for this.y, max.y and min.y</h6>
 		<h4>clampAngle(min, max)</h4>
 			<h6>receives as arguments two numbers<br>if this.angle is greater than max, it is replaced by max, if it is less than min, it is replaced by min</h6>
 		<h4>clampLength(min, max)</h4>
@@ -68,17 +68,17 @@
 		<h4>clampScalar(min, max)</h4>
 			<h6>receives as arguments two numbers<br>if this.x is greater than max, it is replaced by max, if it is less than min, it is replaced by min. the same for this.y</h6>
 		<h4>clone()</h4>
-			<h6>receives no arguments<br>returns a new Vector with all properties equal to this Vector</h6>
+			<h6>receives no arguments<br>returns a new Vector2d with all properties equal to this Vector2d</h6>
 		<h4>copy(v)</h4>
-			<h6>receives as argument a Vector object<br>copies all v properties to this Vector</h6>
+			<h6>receives as argument a Vector2d object<br>copies all v properties to this Vector2d</h6>
 		<h4>distanceTo(v)</h4>
-			<h6>receives as argument a Vector object<br>returns the distance from this Vector to v</h6>
+			<h6>receives as argument a Vector2d object<br>returns the distance from this vector to v</h6>
 		<h4>manhattanDistanceTo(v)</h4>
-			<h6>receives as argument a Vector object<br>returns the manhattan/taxicab distance from this Vector to v (see https://en.wikipedia.org/wiki/Taxicab_geometry for more details)</h6>
+			<h6>receives as argument a Vector2d object<br>returns the manhattan/taxicab distance from this vector to v (see https://en.wikipedia.org/wiki/Taxicab_geometry for more details)</h6>
 		<h4>distanceToSquared(v)</h4>
-			<h6>receives as argument a Vector object<br>returns th distance from this Vector to v squared, good to campare distances because it is slightly faster than distanceTo()</h6>
+			<h6>receives as argument a Vector2d object<br>returns the distance from this vector to v squared, good to campare distances because it is slightly faster than distanceTo()</h6>
 		<h4>divide(v)</h4>
-			<h6>receives as argument a Vector object<br>divides this.x by v.x and this.y by v.y</h6>
+			<h6>receives as argument a Vector2d object<br>divides this.x by v.x and this.y by v.y</h6>
 		<h4>divideAngle(val)</h4>
 			<h6>receives as argument a number<br>divides this.angle by val</h6>
 		<h4>divideLength(val)</h4>
@@ -86,11 +86,11 @@
 		<h4>divideScalar(val)</h4>
 			<h6>receives as argument a number<br>divides this.x and this.y by val</h6>
 		<h4>dot(v)</h4>
-			<h6>receives as argument a Vector object<br>return the dot product of this Vector and v</h6>
+			<h6>receives as argument a Vector2d object<br>return the dot product of this Vector and v</h6>
 		<h4>cross(v)</h4>
-			<h6>receives as argument a Vector object<br>return the z value of the cross product of this Vector and v</h6>
+			<h6>receives as argument a Vector2d object<br>return the z value of the cross product of this Vector and v</h6>
 		<h4>equals(v)</h4>
-			<h6>receives as argument a Vector object<br>returns true if the two vectors represent the same location, else returns false</h6>
+			<h6>receives as argument a Vector2d object<br>returns true if the two vectors represent the same location, else returns false</h6>
 		<h4>floor()</h4>
 			<h6>receives no arguments<br>rounds down this.x and this.y</h6>
 		<h4>floorAngle()</h4>
@@ -98,9 +98,9 @@
 		<h4>floorLength()</h4>
 			<h6>receives no arguments<br>rounds down this.length</h6>
 		<h4>lerp(v, amt)</h4>
-			<h6>receives as arguments one Vector object and one number<br>sets this Vector coordinates to the linear interpolation of this Vector and v, where amt is the percent distance along the line connecting this Vector and v, amt = 0 will be this Vector, amt = 1 will be v (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
+			<h6>receives as arguments one Vector2d object and one number<br>sets this vector coordinates to the linear interpolation of this vector and v, where amt is the percent distance along the line connecting this vector and v, amt = 0 will be this Vector, amt = 1 will be v (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
 		<h4>lerpBeetwen(v1, v2, amt)</h4>
-			<h6>receives as arguments two Vector object and one number<br>sets this Vector coordinates to the linear interpolation of v1 and v2, where amt is the percent distance along the line connecting v1 and v2, amt = 0 will be v1, amt = 1 will be v2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
+			<h6>receives as arguments two Vector2d object and one number<br>sets this vector coordinates to the linear interpolation of v1 and v2, where amt is the percent distance along the line connecting v1 and v2, amt = 0 will be v1, amt = 1 will be v2 (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
 		<h4>lerpAngle(a, amt)</h4>
 			<h6>receives as arguments two numbers<br>sets this.angle to the linear interpolation beetwen this.angle and a, where amt is the percent distance beetwen this.angle and a, amt = 0 will be this.angle, amt = 1 will be a (for more details see https://en.wikipedia.org/wiki/Linear_interpolation)</h6>
 		<h4>lerpAngleBeetwen(a1, a2, amt)</h4>
