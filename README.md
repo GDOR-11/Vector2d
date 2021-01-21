@@ -3,14 +3,24 @@ a simple library for 2d vectors (still in testing phase and no minimized version
 <br>
 <br>
 <h1>properties:</h1>
-<h4>x</h4>
-the x coordinate
-<h4>y</h4>
-the y coordinate
-<h4>length</h4>
-length of the vector
-<h4>angle</h4>
-angle that the vector makes with the x-axis
+<h4>#x</h4>
+private. the x coordinate
+<h4>#y</h4>
+private. the y coordinate
+<h4>#length</h4>
+private. the length of the vector
+<h4>#angle</h4>
+private. the angle that the vector makes with the x-axis
+<h1>getters & setters</h1>
+<h2>getters</h2>
+<h4>get x()</h4>
+public. returns this.#x
+<h4>get y()</h4>
+public. returns this.#y
+<h4>get length()</h4>
+public. returns this.#length
+<h4>get angle()</h4>
+public. returns this.#angle
 <h1>methods:</h1>
 <h2>static:</h2>
 <h4>random()</h4>
