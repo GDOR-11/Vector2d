@@ -45,4 +45,4 @@ receives as argument a Vector object<br>copies all v properties to this Vector
 <h4>distanceTo(v)</h4>
 receives as argument a Vector object<br>returns the distance from this Vector to v
 <h4>manhattanDistanceTo(v)</h4>
-receives as argument a Vector object<br>returns the <a src = 'https://en.wikipedia.org/wiki/Taxicab_geometry'>manhattan distance</a> from this Vector to v
+receives as argument a Vector object<br>returns the manhattan distance from this Vector to v (see https://en.wikipedia.org/wiki/Taxicab_geometry for more details)
