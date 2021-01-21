@@ -38,3 +38,11 @@ receives as arguments two numbers<br>if this.angle is greater than max, it is re
 receives as arguments two numbers<br>if this.length is greater than max, it is replaced by max, if it is less than min, it is replaced by min
 <h4>clampScalar(min, max)</h4>
 receives as arguments two numbers<br>if this.x is greater than max, it is replaced by max, if it is less than min, it is replaced by min. the same for this.y
+<h4>clone()</h4>
+receives no arguments<br>returns a new Vector with all properties equal to this Vector
+<h4>copy(v)</h4>
+receives as argument a Vector object<br>copies all v properties to this Vector
+<h4>distanceTo(v)</h4>
+receives as argument a Vector object<br>returns the distance from this Vector to v
+<h4>manhattanDistanceTo(v)</h4>
+receives as argument a Vector object<br>returns the <a src = 'https://en.wikipedia.org/wiki/Taxicab_geometry'>manhattan distance</a> from this Vector to v
