@@ -2,7 +2,7 @@
 a simple library for 2d vectors (still in testing phase and no minimized version, and documentation is not complete)
 <br>
 <br>
-<h1>global variables:</h1>
+<h1 style = 'font-size: 10%'>global variables:</h1>
 	<h3>COORDINATE.MODE</h3>
 		getter/setter in COORDINATE class, you can pass-in ONLY the values of CARTESIAN or POLAR, it represents the mode that constructors get 
 	<h3>CARTESIAN</h3>
