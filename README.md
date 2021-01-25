@@ -53,8 +53,8 @@
 			<h6>receives as an argument a number<br>adds val to this.angle</h6>
 		<h4>addLength(val)</h4>
 			<h6>receives as an argument a number<br>adds val to this.length</h6>
-		<h4>addScalar(value)</h4>
-			<h6>receives as an argumente a number<br>adds value to this.x and this.y</h6>
+		<h4>addScalar(val)</h4>
+			<h6>receives as an argumente a number<br>adds val to this.x and this.y</h6>
 		<h4>ceil()</h4>
 			<h6>receives no arguments<br>round up this.x and this.y</h6>
 		<h4>ceilAngle()</h4>
@@ -133,4 +133,31 @@
 			<h6>receives no arguments<br>rounds this.x and this.y towards 0 (up if negative, down if positive) to an integer value</h6>
 		<h4>roundAwayFromZero()</h4>
 			<h6>receives no arguments<br>rounds this.x and this.y away from 0 (up if positive, down if negative) to an integer value</h6>
-	
+		<h4>roundAngle()</h4>
+			<h6>receives no arguments<br>rounds this.angle to the nearest integer</h6>
+		<h4>roundAngleToZero()</h4>
+			<h6>receives no arguments<br>rounds this.angle towards 0 (up if negative, down if positive) to an integer value</h6>
+		<h4>roundAngleAwayFromZero()</h4>
+			<h6>receives no arguments<br>rounds this.angle away from 0 (up if positive, down if negative) to an integer value</h6>
+		<h4>roundLength()</h4>
+			<h6>receives no arguments<br>rounds this.length to the nearest integer</h6>
+		<h4>roundLengthToZero()</h4>
+			<h6>receives no arguments<br>rounds this.length towards 0 (up if negative, down if positive) to an integer value</h6>
+		<h4>roundLengthAwayFromZero()</h4>
+			<h6>receives no arguments<br>rounds this.length away from 0 (up if positive, down if negative) to an integer value</h6>
+		<h4>set(x, y)</h4>
+			<h6>receives as arguments two numbers<br>sets this vector coordinates to (x, y)</h6>
+		<h4>setScalar(val)</h4>
+			<h6>receives as argument one number<br>sets this vector coordinates to (val, val)</h6>
+		<h4>setPolar(r, theta)</h4>
+			<h6>receives as arguments two numbers<br>sets this vector polar coordinates to (r, theta)</h6>
+		<h4>setPolarScalar(val)</h4>
+			<h6>receives as argument one number<br>sets this vector polar coordinates to (val, val)<h6>
+		<h4>sub(v)</h4>
+			<h6>receives as an argument a Vector2d object<br>subtracts v.x to this.x and v.y to this.y</h6>
+		<h4>subAngle(val)</h4>
+			<h6>receives as an argument a number<br>subtracts val to this.angle</h6>
+		<h4>subLength(val)</h4>
+			<h6>receives as an argument a number<br>subtracts val to this.length</h6>
+		<h4>subScalar(val)</h4>
+			<h6>receives as an argumente a number<br>subtracts val to this.x and this.y</h6>
