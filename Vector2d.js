@@ -334,17 +334,17 @@ class Vector2d {
 		this.x *= vector.x;
 		this.y *= vector.y;
 	}
-	multiplyLength(value) {
-		if(Number(value) !== value) {
-			throw Error('parameter is not a number');
-		}
-		this.length *= value;
-	}
 	multiplyAngle(value) {
 		if(Number(value) !== value) {
 			throw Error('parameter is not a number');
 		}
 		this.angle *= value;
+	}
+	multiplyLength(value) {
+		if(Number(value) !== value) {
+			throw Error('parameter is not a number');
+		}
+		this.length *= value;
 	}
 	multiplyScalar(value) {
 		if(Number(value) !== value) {
@@ -454,8 +454,21 @@ class Vector2d {
 		this.y = value;
 	}
 	setPolar(r, theta) {
+		if(Number(r) !== r) {
+			throw Error('parameter 1 is not a number');
+		}
+		if(Number(theta) !== theta) {
+			throw Error('parameter 2 is not a number');
+		}
 		this.length = r;
 		this.angle = theta;
+	}
+	setPolarScalar(value) {
+		if(Number(value) !== value) {
+			throw Error('parameter 1 is not a number');
+		}
+		this.length = value;
+		this.angle = value;
 	}
 	sub(vector) {
 		if(!Vector2d.isVector2d(vector)) {
